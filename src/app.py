@@ -115,7 +115,7 @@ def add_people_to_favorite(people_id):
 @app.route('/favorite/planet/<int:planet_id>', methods=['DELETE'])
 def delete_planet(planet_id):
 
-    planet_to_delete = Favorite.query.get(planet_id)
+    planet_to_delete = Favorites.query.get(planet_id)
     if not planet_to_delete:
         if not planet_to_delete:
             return jsonify({"Error": "Planet not found"}), 404
@@ -133,7 +133,7 @@ def delete_planet(planet_id):
 @app.route('/favorite/people/<int:people_id>', methods=['DELETE'])
 def delete_people(people_id):
 
-    people_to_delete = Favorite.query.get(people_id)
+    people_to_delete = Favorites.query.get(people_id)
     if not people_to_delete:
         if not people_to_delete:
             return jsonify({"Error": "Planet not found"}), 404
